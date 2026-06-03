@@ -14,7 +14,7 @@ export default function About() {
               alt="Adarsh Kumar Tiwary Portfolio Portrait"
               className="w-full h-full object-cover grayscale brightness-90 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700 scale-[1.03]"
               // src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBFAvb1wVWwIT3vGRGUS3qjZihvrzzAp3uME4ei9lWj5iUo59riHb_PMrQcPNGr5FJDzjK4Nq5FRFOJ4TP7xW21JuNFq5zNvq4tKTUmb6-lhsoU_1GtUbgvgojJJGcFjJppeyoiTqj7Ocnl_Fk6jGXLpkuPjaTiaB1u3jcs1Pq4oL2CA-nvDtt5hWqF76FFTrdBoS5v9swazqo9fheKWxePX6rcT4XupM_TO1Aw0fM2b954FyiOBJwCgzI70CzBAocFLyYwHQQSQ"
-              src="img.png"
+              src="/img.png"
               referrerPolicy="no-referrer"
             />
             {/* Ambient vignette shadow overlay */}
