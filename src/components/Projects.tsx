@@ -2,6 +2,9 @@ import { useState } from "react";
 import { PROJECTS } from "../data";
 import { ExternalLink, Code2, Play, GitBranch, Github, X, SquareTerminal } from "lucide-react";
 import { Project } from "../types";
+import { motion } from "motion/react";
+import { ScrollReveal, StaggerContainer } from "../animations/ScrollAnimations";
+import { fadeUpVariants, headingVariants, staggerContainerVariants, staggerItemVariants, cardVariants } from "../animations/variants";
 
 export default function Projects() {
   const [selectedDemo, setSelectedDemo] = useState<Project | null>(null);
@@ -91,35 +94,46 @@ export default function SynthetixShowcase() {
         {/* Section Title Header */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 mb-20">
           <div className="text-left max-w-2xl">
-            <span className="font-mono text-[#00f5ff] text-xs tracking-widest uppercase mb-4 block font-bold">
-              PORTFOLIO
-            </span>
-            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl text-white font-bold mb-4">
-              Featured <span className="text-[#00f5ff]">Work</span>
-            </h2>
-            <p className="font-sans text-base sm:text-lg text-[#b9caca]">
-              Selected engineering projects showcasing full-stack proficiency and architectural design.
-            </p>
+            <ScrollReveal variants={fadeUpVariants}>
+              <span className="font-mono text-[#00f5ff] text-xs tracking-widest uppercase mb-4 block font-bold">
+                PORTFOLIO
+              </span>
+            </ScrollReveal>
+            
+            <ScrollReveal variants={headingVariants} delay={0.1}>
+              <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl text-white font-bold mb-4">
+                Featured <span className="text-[#00f5ff]">Work</span>
+              </h2>
+            </ScrollReveal>
+            
+            <ScrollReveal variants={fadeUpVariants} delay={0.2}>
+              <p className="font-sans text-base sm:text-lg text-[#b9caca]">
+                Selected engineering projects showcasing full-stack proficiency and architectural design.
+              </p>
+            </ScrollReveal>
           </div>
 
-          <a
-            href="https://github.com"
-            target="_blank"
-            referrerPolicy="no-referrer"
-            className="px-6 py-3.5 glass-panel rounded-full hover:bg-white/10 transition-all font-semibold flex items-center gap-2.5 text-sm group"
-          >
-            <Github className="w-4 h-4 text-[#00f5ff]" />
-            View GitHub Repository
-          </a>
+          <ScrollReveal variants={fadeUpVariants} delay={0.3}>
+            <a
+              href="https://github.com"
+              target="_blank"
+              referrerPolicy="no-referrer"
+              className="px-6 py-3.5 glass-panel rounded-full hover:bg-white/10 transition-all font-semibold flex items-center gap-2.5 text-sm group"
+            >
+              <Github className="w-4 h-4 text-[#00f5ff]" />
+              View GitHub Repository
+            </a>
+          </ScrollReveal>
         </div>
 
         {/* 3 Columns Grid of Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <StaggerContainer variants={staggerContainerVariants} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {PROJECTS.map((project) => {
             const isHovered = hoveredPid === project.id;
             return (
-              <div
+              <motion.div
                 key={project.id}
+                variants={staggerItemVariants}
                 onMouseEnter={() => setHoveredPid(project.id)}
                 onMouseLeave={() => setHoveredPid(null)}
                 className="glass-panel group rounded-[2.5rem] overflow-hidden flex flex-col tilt-card relative border border-white/5"
@@ -174,10 +188,10 @@ export default function SynthetixShowcase() {
                     isHovered ? "opacity-100" : "opacity-0"
                   }`}
                 />
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </StaggerContainer>
 
       </div>
 

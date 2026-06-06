@@ -1,5 +1,8 @@
 import { useState, FormEvent, useEffect } from "react";
 import { Send, FileText, Link2, CheckCircle, Mail, User, MessageSquare, Trash2, Key, Inbox, AlertCircle, X, ShieldAlert, Lock, Unlock } from "lucide-react";
+import { motion } from "motion/react";
+import { ScrollReveal, FadeUp, StaggerContainer } from "../animations/ScrollAnimations";
+import { fadeUpVariants, headingVariants, staggerContainerVariants, staggerItemVariants } from "../animations/variants";
 
 interface LocalMessage {
   name: string;
@@ -257,12 +260,16 @@ export default function Contact() {
 
         <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl text-white font-extrabold mb-8">
           Ready to Build <br />
-          <span className="text-[#00f5ff] text-glow">The Future?</span>
+          <ScrollReveal variants={fadeUpVariants}>
+            <span className="text-[#00f5ff] text-glow">The Future?</span>
+          </ScrollReveal>
         </h2>
         
-        <p className="font-sans text-base sm:text-lg lg:text-xl text-[#b9caca] mb-12 max-w-xl mx-auto leading-relaxed">
-          Currently open to internship opportunities, full-time engineering roles, and innovative collaborations. Let's discuss how we can build something extraordinary.
-        </p>
+        <ScrollReveal variants={fadeUpVariants} delay={0.1} className="mb-12">
+          <p className="font-sans text-base sm:text-lg lg:text-xl text-[#b9caca] max-w-xl mx-auto leading-relaxed">
+            Currently open to internship opportunities, full-time engineering roles, and innovative collaborations. Let's discuss how we can build something extraordinary.
+          </p>
+        </ScrollReveal>
 
         {/* Access Key Settings Toggle (Only shown to Admin) */}
         {isAdmin && (
@@ -324,10 +331,11 @@ export default function Contact() {
         )}
 
         {/* Dynamic Form Panel */}
-        <form onSubmit={handleSubmit} className="max-w-lg mx-auto text-left space-y-6 mb-12">
+        <form onSubmit={handleSubmit} className="max-w-lg mx-auto">
+          <StaggerContainer variants={staggerContainerVariants} className="text-left space-y-6 mb-12">
           
           {/* Name Field */}
-          <div className="space-y-2">
+          <motion.div variants={staggerItemVariants} className="space-y-2">
             <label className="text-xs font-mono text-[#00f5ff] uppercase tracking-wider font-semibold flex items-center gap-1.5 justify-start">
               <User className="w-3.5 h-3.5" /> Full Name
             </label>
@@ -339,10 +347,10 @@ export default function Contact() {
               className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white text-sm outline-none focus:border-[#00f5ff]/50 focus:bg-black/60 transition-all font-sans"
               required
             />
-          </div>
+          </motion.div>
 
           {/* Email Field */}
-          <div className="space-y-2">
+          <motion.div variants={staggerItemVariants} className="space-y-2">
             <label className="text-xs font-mono text-[#00f5ff] uppercase tracking-wider font-semibold flex items-center gap-1.5 justify-start">
               <Mail className="w-3.5 h-3.5" /> Email Address
             </label>
@@ -354,10 +362,10 @@ export default function Contact() {
               className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white text-sm outline-none focus:border-[#00f5ff]/50 focus:bg-black/60 transition-all font-sans"
               required
             />
-          </div>
+          </motion.div>
 
           {/* Message Content */}
-          <div className="space-y-2">
+          <motion.div variants={staggerItemVariants} className="space-y-2">
             <label className="text-xs font-mono text-[#00f5ff] uppercase tracking-wider font-semibold flex items-center gap-1.5 justify-start">
               <MessageSquare className="w-3.5 h-3.5" /> Message Details
             </label>
@@ -369,18 +377,18 @@ export default function Contact() {
               className="w-full bg-black/40 border border-white/10 rounded-xl p-4 text-white text-sm outline-none focus:border-[#00f5ff]/50 focus:bg-black/60 transition-all font-sans resize-none"
               required
             />
-          </div>
+          </motion.div>
 
           {/* Feedback states notifications */}
           {errorText && (
-            <div className="text-xs text-red-400 font-mono font-bold py-1 select-none text-left flex items-center gap-1.5">
+            <motion.div variants={staggerItemVariants} className="text-xs text-red-400 font-mono font-bold py-1 select-none text-left flex items-center gap-1.5">
               <AlertCircle className="w-4 h-4 shrink-0" />
               <span>{errorText}</span>
-            </div>
+            </motion.div>
           )}
 
           {isSent && (
-            <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs sm:text-sm font-semibold flex flex-col gap-2 animate-bounce">
+            <motion.div variants={staggerItemVariants} className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs sm:text-sm font-semibold flex flex-col gap-2 animate-bounce">
               <div className="flex items-center gap-2">
                 <CheckCircle className="w-5 h-5 shrink-0 text-emerald-400" />
                 <span>Message successfully submitted!</span>
@@ -390,11 +398,11 @@ export default function Contact() {
                   ? "Your message was sent live via Web3Forms with high priority to Adarsh's inbox."
                   : "Saved to your Developer Inbox below! Enter an Access Key to enable direct forwarding to your email."}
               </p>
-            </div>
+            </motion.div>
           )}
 
           {/* Buttons container */}
-          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-6">
+          <motion.div variants={staggerItemVariants} className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-6">
             <button
               type="submit"
               disabled={isSubmitting}
@@ -438,7 +446,8 @@ export default function Contact() {
                 <Link2 className="w-4 h-4" />
               </a>
             </div>
-          </div>
+          </motion.div>
+          </StaggerContainer>
         </form>
 
         {/* Local Developer Messages Dashboard Panel (Only shown to Admin) */}

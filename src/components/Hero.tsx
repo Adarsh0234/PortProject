@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 import { ArrowUpRight, MapPin, Terminal, Cpu, Database, Server, RefreshCw, Send, Check } from "lucide-react";
+import { motion } from "motion/react";
+import { FadeUp, ScrollReveal } from "../animations/ScrollAnimations";
+import { fadeUpVariants, scaleInVariants, staggerItemVariants } from "../animations/variants";
 
 export default function Hero() {
   const [typedText, setTypedText] = useState("");
@@ -91,39 +94,70 @@ export default function Hero() {
         <div className="lg:col-span-7 flex flex-col text-left">
           
           {/* Tagline */}
-          <div className="inline-flex items-center gap-2 mb-4">
+          <ScrollReveal
+            variants={fadeUpVariants}
+            className="inline-flex items-center gap-2 mb-4"
+          >
             <span className="w-2.5 h-2.5 rounded-full bg-[#00f5ff] animate-ping" />
             <p className="font-mono text-[#00f5ff] tracking-[0.2em] uppercase font-bold text-xs select-none">
               AVAILABLE FOR ROLES & INTERNSHIPS
             </p>
-          </div>
+          </ScrollReveal>
 
           {/* Main Title Heading */}
-          <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl mb-6 leading-tight tracking-tight text-white font-extrabold">
-            Hi, I'm <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00f5ff] via-[#3bf5ff] to-[#9400e4] text-glow select-text">
-              Adarsh Kumar Tiwary
-            </span>
-          </h1>
+          <ScrollReveal
+            variants={fadeUpVariants}
+            delay={0.1}
+            className="mb-6"
+          >
+            <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl leading-tight tracking-tight text-white font-extrabold">
+              Hi, I'm <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00f5ff] via-[#3bf5ff] to-[#9400e4] text-glow select-text">
+                Adarsh Kumar Tiwary
+              </span>
+            </h1>
+          </ScrollReveal>
 
           {/* Secondary Subtitle */}
-          <h2 className="font-display text-xl sm:text-3xl text-[#dfe2f1]/90 mb-4 font-semibold">
-            Java Enthusiast
-          </h2>
+          <ScrollReveal
+            variants={fadeUpVariants}
+            delay={0.2}
+            className="mb-4"
+          >
+            <h2 className="font-display text-xl sm:text-3xl text-[#dfe2f1]/90 font-semibold">
+              Java Enthusiast
+            </h2>
+          </ScrollReveal>
 
           {/* Typewriter text line block */}
-          <div className="font-mono text-lg sm:text-2xl text-[#00f5ff] mb-8 inline-flex items-center gap-2 select-none">
-            <span className="text-white/40">&gt;_</span>
-            <span className="text-glow typing-cursor">{typedText}</span>
-          </div>
+          <ScrollReveal
+            variants={fadeUpVariants}
+            delay={0.3}
+            className="mb-8"
+          >
+            <div className="font-mono text-lg sm:text-2xl text-[#00f5ff] inline-flex items-center gap-2 select-none">
+              <span className="text-white/40">&gt;_</span>
+              <span className="text-glow typing-cursor">{typedText}</span>
+            </div>
+          </ScrollReveal>
 
           {/* Bio text */}
-          <p className="font-sans text-base sm:text-lg text-[#b9caca] mb-10 max-w-xl leading-relaxed">
-            Passionate about creating responsive web applications, debugging complex problems, and building scalable software solutions. I specialize in Java, Spring Boot, React, and cloud architectures.
-          </p>
+          <ScrollReveal
+            variants={fadeUpVariants}
+            delay={0.4}
+            className="mb-10"
+          >
+            <p className="font-sans text-base sm:text-lg text-[#b9caca] max-w-xl leading-relaxed">
+              Passionate about creating responsive web applications, debugging complex problems, and building scalable software solutions. I specialize in Java, Spring Boot, React, and cloud architectures.
+            </p>
+          </ScrollReveal>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-5">
+          <ScrollReveal
+            variants={fadeUpVariants}
+            delay={0.5}
+            className="flex flex-col sm:flex-row gap-5 mb-14"
+          >
             <button
               onClick={() => handleScrollTo("#projects")}
               className="gradient-button px-8 py-4 rounded-full font-bold text-black flex items-center justify-center gap-2.5 text-base shadow-lg shadow-[#00f5ff]/25 lg:hover:scale-105 active:scale-95 transition-all cursor-pointer select-none"
@@ -137,10 +171,14 @@ export default function Hero() {
             >
               Get In Touch
             </button>
-          </div>
+          </ScrollReveal>
 
           {/* Meta Labels info */}
-          <div className="mt-14 flex flex-wrap items-center gap-8 opacity-80">
+          <ScrollReveal
+            variants={fadeUpVariants}
+            delay={0.6}
+            className="flex flex-wrap items-center gap-8 opacity-80"
+          >
             <div className="flex flex-col">
               <span className="font-mono text-[#00f5ff] text-[10px] uppercase tracking-wider font-bold mb-1">
                 CURRENTLY BASED
@@ -158,7 +196,7 @@ export default function Hero() {
                 Java Spring Boot & React Ecosystem
               </span>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
 
         {/* Right Side: Virtual Interactive Developer Illustration & Visual Storytelling */}
@@ -169,7 +207,12 @@ export default function Hero() {
           <div className="absolute -inset-14 bg-[#9400e4]/5 blur-[140px] rounded-full pointer-events-none" />
 
           {/* Visual Interactive Tech Stack Map Container */}
-          <div className="w-full max-w-md glass-panel rounded-3xl p-6 relative overflow-hidden shadow-2xl border border-white/10 hover:border-[#00f5ff]/30 transition-all duration-500">
+          <ScrollReveal
+            variants={scaleInVariants}
+            delay={0.3}
+            className="w-full max-w-md"
+          >
+            <div className="glass-panel rounded-3xl p-6 relative overflow-hidden shadow-2xl border border-white/10 hover:border-[#00f5ff]/30 transition-all duration-500">
             
             {/* Top-bar window indicator decor */}
             <div className="flex items-center justify-between mb-8 pb-3 border-b border-white/5">
@@ -223,7 +266,7 @@ export default function Hero() {
                     API
                   </div>
                 </div>
-                <span className="text-[11px] font-mono text-[#b9caca] mt-2 font-semibold">Spring Boot DB Gateway</span>
+                <span className="text-[11px] font-mono text-[#b9caca] mt-2 font-semibold">DB Gateway</span>
               </div>
 
               {/* Animated Database Node (MySQL Server) */}
@@ -282,16 +325,41 @@ export default function Hero() {
 
           </div>
 
+          </ScrollReveal>
+
           {/* Floating tech stack badges with custom delay classes */}
-          <div className="absolute top-2 -left-4 px-3 py-1.5 bg-black/60 backdrop-blur-md border border-[#00f5ff]/20 text-[#00f5ff] font-mono text-[10px] rounded-full font-bold shadow-lg flex items-center gap-1.5 animate-bounce select-none">
+          <motion.div
+            className="absolute top-2 -left-4 px-3 py-1.5 bg-black/60 backdrop-blur-md border border-[#00f5ff]/20 text-[#00f5ff] font-mono text-[10px] rounded-full font-bold shadow-lg flex items-center gap-1.5 animate-bounce select-none"
+            variants={staggerItemVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ delay: 0.4 }}
+          >
             <span className="w-1.5 h-1.5 rounded-full bg-[#00f5ff]" /> Java Spring
-          </div>
-          <div className="absolute bottom-20 -right-6 px-3 py-1.5 bg-black/60 backdrop-blur-md border border-[#9400e4]/20 text-[#e3b5ff] font-mono text-[10px] rounded-full font-bold shadow-lg flex items-center gap-1.5 animate-bounce select-none" style={{ animationDelay: "1s" }}>
+          </motion.div>
+          <motion.div
+            className="absolute bottom-20 -right-6 px-3 py-1.5 bg-black/60 backdrop-blur-md border border-[#9400e4]/20 text-[#e3b5ff] font-mono text-[10px] rounded-full font-bold shadow-lg flex items-center gap-1.5 animate-bounce select-none"
+            variants={staggerItemVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ delay: 0.5 }}
+            style={{ animationDelay: "1s" }}
+          >
             <span className="w-1.5 h-1.5 rounded-full bg-[#9400e4]" /> React.js
-          </div>
-          <div className="absolute top-48 -left-8 px-3 py-1.5 bg-black/60 backdrop-blur-md border border-white/10 text-white font-mono text-[10px] rounded-full font-bold shadow-lg flex items-center gap-1.5 animate-bounce select-none" style={{ animationDelay: "0.5s" }}>
+          </motion.div>
+          <motion.div
+            className="absolute top-48 -left-8 px-3 py-1.5 bg-black/60 backdrop-blur-md border border-white/10 text-white font-mono text-[10px] rounded-full font-bold shadow-lg flex items-center gap-1.5 animate-bounce select-none"
+            variants={staggerItemVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ delay: 0.45 }}
+            style={{ animationDelay: "0.5s" }}
+          >
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" /> MySQL Database
-          </div>
+          </motion.div>
 
         </div>
 

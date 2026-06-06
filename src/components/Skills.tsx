@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { SKILL_CATEGORIES } from "../data";
 import { Terminal, Code2, Cloud, Cpu, Database } from "lucide-react";
+import { motion } from "motion/react";
+import { ScrollReveal, StaggerContainer } from "../animations/ScrollAnimations";
+import { fadeUpVariants, headingVariants, staggerContainerVariants, staggerItemVariants, cardVariants } from "../animations/variants";
 
 export default function Skills() {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
@@ -29,24 +32,33 @@ export default function Skills() {
         
         {/* Category Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <span className="font-mono text-[#00f5ff] text-xs tracking-widest uppercase mb-4 block font-bold">
-            COMPETENCIES
-          </span>
-          <h2 className="font-display text-4xl sm:text-5xl text-white font-bold mb-6">
-            Technical <span className="text-[#00f5ff]">Arsenal</span>
-          </h2>
-          <p className="font-sans text-base sm:text-lg text-[#b9caca]">
-            A custom compilation of platforms, languages, and core methodologies driving my engineering cycles.
-          </p>
+          <ScrollReveal variants={fadeUpVariants}>
+            <span className="font-mono text-[#00f5ff] text-xs tracking-widest uppercase mb-4 block font-bold">
+              COMPETENCIES
+            </span>
+          </ScrollReveal>
+          
+          <ScrollReveal variants={headingVariants} delay={0.1}>
+            <h2 className="font-display text-4xl sm:text-5xl text-white font-bold mb-6">
+              Technical <span className="text-[#00f5ff]">Arsenal</span>
+            </h2>
+          </ScrollReveal>
+          
+          <ScrollReveal variants={fadeUpVariants} delay={0.2}>
+            <p className="font-sans text-base sm:text-lg text-[#b9caca]">
+              A custom compilation of platforms, languages, and core methodologies driving my engineering cycles.
+            </p>
+          </ScrollReveal>
         </div>
 
         {/* 5 Cards Responsive Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        <StaggerContainer variants={staggerContainerVariants} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {SKILL_CATEGORIES.map((category) => {
             const isHighlighted = activeCategory === category.id;
             return (
-              <div
+              <motion.div
                 key={category.id}
+                variants={staggerItemVariants}
                 className={`glass-panel p-6 sm:p-7 rounded-3xl transition-all duration-300 transform flex flex-col justify-start ${
                   isHighlighted ? "scale-[1.03] border-[#00f5ff]/40 shadow-xl shadow-[#00f5ff]/5" : ""
                 }`}
@@ -136,10 +148,10 @@ export default function Skills() {
                   )}
                 </div>
 
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </StaggerContainer>
         
       </div>
     </section>

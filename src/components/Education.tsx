@@ -2,6 +2,9 @@ import { useState } from "react";
 import { EDUCATION } from "../data";
 import { Award, BookOpen, GraduationCap, Flame, Calendar } from "lucide-react";
 import { EducationItem } from "../types";
+import { motion } from "motion/react";
+import { ScrollReveal, StaggerContainer } from "../animations/ScrollAnimations";
+import { fadeUpVariants, headingVariants, staggerContainerVariants, staggerItemVariants, timelineVariants } from "../animations/variants";
 
 export default function Education() {
   const [activeItem, setActiveItem] = useState<string | null>("btech");
@@ -36,15 +39,23 @@ export default function Education() {
         
         {/* Section title header */}
         <div className="text-center mb-20">
-          <span className="font-mono text-[#00f5ff] text-xs tracking-widest uppercase mb-4 block font-bold">
-            ACADEMIC PATH
-          </span>
-          <h2 className="font-display text-4xl sm:text-5xl text-white font-bold mb-6">
-            Educational <span className="text-[#00f5ff]">Journey</span>
-          </h2>
-          <p className="font-sans text-base sm:text-lg text-[#b9caca]">
-            The theoretical foundation and analytical experiences shaping my engineering methodologies.
-          </p>
+          <ScrollReveal variants={fadeUpVariants}>
+            <span className="font-mono text-[#00f5ff] text-xs tracking-widest uppercase mb-4 block font-bold">
+              ACADEMIC PATH
+            </span>
+          </ScrollReveal>
+          
+          <ScrollReveal variants={headingVariants} delay={0.1}>
+            <h2 className="font-display text-4xl sm:text-5xl text-white font-bold mb-6">
+              Educational <span className="text-[#00f5ff]">Journey</span>
+            </h2>
+          </ScrollReveal>
+          
+          <ScrollReveal variants={fadeUpVariants} delay={0.2}>
+            <p className="font-sans text-base sm:text-lg text-[#b9caca]">
+              The theoretical foundation and analytical experiences shaping my engineering methodologies.
+            </p>
+          </ScrollReveal>
         </div>
 
         {/* Timeline wrapper */}
@@ -53,16 +64,18 @@ export default function Education() {
           {/* Active timeline absolute highlight strip */}
           <div className="absolute left-[-1px] top-4 bottom-4 w-[2px] bg-gradient-to-b from-[#00f5ff] via-[#9400e4] to-[#0a0e18]" />
 
-          {EDUCATION.map((item, index) => {
-            const isActive = activeItem === item.id;
-            const accomplishments = getAccomplishments(item.id);
+          <StaggerContainer variants={staggerContainerVariants}>
+            {EDUCATION.map((item, index) => {
+              const isActive = activeItem === item.id;
+              const accomplishments = getAccomplishments(item.id);
 
-            return (
-              <div
-                key={item.id}
-                onClick={() => setActiveItem(item.id)}
-                className="relative group cursor-pointer select-none"
-              >
+              return (
+                <motion.div
+                  key={item.id}
+                  variants={timelineVariants}
+                  onClick={() => setActiveItem(item.id)}
+                  className="relative group cursor-pointer select-none"
+                >
                 
                 {/* Node Dot icon on left bar */}
                 <div
@@ -153,9 +166,10 @@ export default function Education() {
                   </div>
 
                 </div>
-              </div>
+              </motion.div>
             );
           })}
+          </StaggerContainer>
         </div>
         
       </div>
