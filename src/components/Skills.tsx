@@ -40,7 +40,7 @@ export default function Skills() {
           
           <ScrollReveal variants={headingVariants} delay={0.1}>
             <h2 className="font-display text-4xl sm:text-5xl text-white font-bold mb-6">
-              Technical <span className="text-[#00f5ff]">Arsenal</span>
+              Technical <span className="text-[#00f5ff]">Skills</span>
             </h2>
           </ScrollReveal>
           

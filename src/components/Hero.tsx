@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ArrowUpRight, MapPin, Terminal, Cpu, Database, Server, RefreshCw, Send, Check } from "lucide-react";
+import { ArrowUpRight, MapPin, Terminal } from "lucide-react";
 import { motion } from "motion/react";
 import { FadeUp, ScrollReveal } from "../animations/ScrollAnimations";
 import { fadeUpVariants, scaleInVariants, staggerItemVariants } from "../animations/variants";
@@ -8,8 +8,6 @@ export default function Hero() {
   const [typedText, setTypedText] = useState("");
   const [wordIndex, setWordIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [requestStatus, setRequestStatus] = useState<"idle" | "sending" | "success">("idle");
-  const [activePacket, setActivePacket] = useState<number | null>(null);
 
   const words = [
     "Software Developer",
@@ -53,33 +51,6 @@ export default function Hero() {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
-  };
-
-  const runSimulation = () => {
-    if (requestStatus !== "idle") return;
-    setRequestStatus("sending");
-    setActivePacket(1); // Packet goes to server
-
-    setTimeout(() => {
-      setActivePacket(2); // Server pings DB
-      
-      setTimeout(() => {
-        setActivePacket(3); // DB returns to server
-        
-        setTimeout(() => {
-          setActivePacket(4); // Server responses to client
-          
-          setTimeout(() => {
-            setRequestStatus("success");
-            setActivePacket(null);
-            
-            setTimeout(() => {
-              setRequestStatus("idle");
-            }, 2000);
-          }, 600);
-        }, 600);
-      }, 600);
-    }, 600);
   };
 
   return (
@@ -193,7 +164,7 @@ export default function Hero() {
                 TECH SPECIALTY
               </span>
               <span className="font-medium text-[#dfe2f1] text-sm select-text">
-                Java Spring Boot & React Ecosystem
+                Java JavaScript & MySQL Database
               </span>
             </div>
           </ScrollReveal>
@@ -226,101 +197,46 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Architecture simulation flow stage */}
-            <div className="relative py-10 flex flex-col items-center gap-10 select-none">
-              
-              {/* Animated Client Node (React.js) */}
-              <div className="relative flex flex-col items-center group/node">
-                <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shadow-lg group-hover/node:border-[#00f5ff] transition-all duration-300 relative">
-                  <Terminal className="w-8 h-8 text-[#00f5ff] animate-pulse" />
-                  <div className="absolute -right-2 -top-2 w-5 h-5 bg-[#00f5ff]/10 text-[#00f5ff] text-[9px] rounded-full flex items-center justify-center font-bold border border-[#00f5ff]/30">
-                    UI
-                  </div>
-                </div>
-                <span className="text-[11px] font-mono text-[#b9caca] mt-2 font-semibold">React Frontend</span>
-              </div>
-
-              {/* Server Gateway Connective Paths (Drawn via glowing vectors) */}
-              <div className="absolute top-[80px] bottom-[115px] w-0.5 bg-gradient-to-b from-[#00f5ff]/20 via-[#9400e4]/20 to-[#00f5ff]/20 z-0">
-                
-                {/* Traveling packet simulator bubbles */}
-                {activePacket === 1 && (
-                  <div className="absolute w-3 h-3 bg-gradient-to-r from-[#00f5ff] to-[#9400e4] rounded-full left-1/2 -translate-x-1/2 animate-bounce shadow-[0_0_10px_#00f5ff]" style={{ top: "10%" }} />
-                )}
-                {activePacket === 4 && (
-                  <div className="absolute w-3 h-3 bg-[#00f5ff] rounded-full left-1/2 -translate-x-1/2 animate-pulse shadow-[0_0_10px_#00f5ff]" style={{ bottom: "10%" }} />
-                )}
-                {activePacket === 2 && (
-                  <div className="absolute w-3 h-3 bg-[#9400e4] rounded-full left-1/2 -translate-x-1/2 animate-bounce shadow-[0_0_10px_#9400e4]" style={{ top: "60%" }} />
-                )}
-                {activePacket === 3 && (
-                  <div className="absolute w-3 h-3 bg-[#00f5ff] rounded-full left-1/2 -translate-x-1/2 animate-ping shadow-[0_0_10px_#00f5ff]" style={{ bottom: "40%" }} />
-                )}
-              </div>
-
-              {/* Animated Backend Node (Spring Boot API) */}
-              <div className="relative flex flex-col items-center group/node">
-                <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shadow-lg group-hover/node:border-[#9400e4] transition-all duration-300 relative z-10">
-                  <Server className="w-8 h-8 text-[#e3b5ff]" />
-                  <div className="absolute -left-2 -top-2 w-5 h-5 bg-[#9400e4]/10 text-[#e3b5ff] text-[9px] rounded-full flex items-center justify-center font-bold border border-[#9400e4]/30">
-                    API
-                  </div>
-                </div>
-                <span className="text-[11px] font-mono text-[#b9caca] mt-2 font-semibold">DB Gateway</span>
-              </div>
-
-              {/* Animated Database Node (MySQL Server) */}
-              <div className="relative flex flex-col items-center group/node">
-                <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shadow-lg group-hover/node:border-[#00f5ff] transition-all duration-300 relative z-10">
-                  <Database className="w-8 h-8 text-[#adc6ff]" />
-                  <div className="absolute -right-2 -top-2 w-5 h-5 bg-[#adc6ff]/10 text-[#adc6ff] text-[9px] rounded-full flex items-center justify-center font-bold border border-[#adc6ff]/30">
-                    SQL
-                  </div>
-                </div>
-                <span className="text-[11px] font-mono text-[#b9caca] mt-2 font-semibold">MySQL Relational Storage</span>
-              </div>
-
-            </div>
-
-            {/* Simulated Live Action Controls */}
-            <div className="mt-6 pt-4 border-t border-white/5 flex flex-col items-stretch gap-3">
-              <button
-                onClick={runSimulation}
-                disabled={requestStatus !== "idle"}
-                className={`py-2.5 rounded-xl text-xs font-bold transition-all uppercase tracking-wider flex items-center justify-center gap-2 select-none border cursor-pointer ${
-                  requestStatus === "idle"
-                    ? "bg-[#00f5ff]/10 border-[#00f5ff]/30 text-[#00f5ff] hover:bg-[#00f5ff]/20"
-                    : requestStatus === "sending"
-                    ? "bg-amber-400/5 border-amber-400/20 text-amber-300 cursor-not-allowed"
-                    : "bg-emerald-500/10 border-emerald-500/30 text-emerald-400"
-                }`}
-              >
-                {requestStatus === "idle" && (
-                  <>
-                    <RefreshCw className="w-3.5 h-3.5" />
-                    Simulate API Pipeline
-                  </>
-                )}
-                {requestStatus === "sending" && (
-                  <>
-                    <RefreshCw className="w-3.5 h-3.5 animate-spin" />
-                    Traveling Pipeline...
-                  </>
-                )}
-                {requestStatus === "success" && (
-                  <>
-                    <Check className="w-3.5 h-3.5" />
-                    Response Success! 200 OK (1.2s)
-                  </>
-                )}
-              </button>
-
-              <div className="flex items-center justify-between text-[10px] text-[#b9caca]/60 font-mono">
-                <span>Latency index: 42ms</span>
-                <span className="text-emerald-400 flex items-center gap-1 select-none">
-                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" /> Connection Sandbox: Live
-                </span>
-              </div>
+            {/* Java Code Display */}
+            <div className="relative py-6 px-4 font-mono text-xs max-h-96">
+              <pre className="text-left leading-loose">
+                <code>
+                  <span className="text-[#e3b5ff]">int</span>
+                  <span className="text-white"> </span>
+                  <span className="text-[#00f5ff]">fibonacci</span>
+                  <span className="text-white">(</span>
+                  <span className="text-[#e3b5ff]">int</span>
+                  <span className="text-white"> n) {'{'}</span>
+                  <br />
+                  <br />
+                  <span className="text-[#b9caca]">  </span>
+                  <span className="text-[#e3b5ff]">if</span>
+                  <span className="text-white">(n {'<='} 1)</span>
+                  <br />
+                  <span className="text-[#b9caca]">    </span>
+                  <span className="text-[#e3b5ff]">return</span>
+                  <span className="text-white"> n;</span>
+                  <br />
+                  <br />
+                  <span className="text-[#b9caca]">  </span>
+                  <span className="text-[#e3b5ff]">return</span>
+                  <span className="text-white"> </span>
+                  <span className="text-[#00f5ff]">fibonacci</span>
+                  <span className="text-white">(n-</span>
+                  <span className="text-[#ff9d76]">1</span>
+                  <span className="text-white">) +</span>
+                  <br />
+                  <span className="text-[#b9caca]">         </span>
+                  <span className="text-[#00f5ff]">fibonacci</span>
+                  <span className="text-white">(n-</span>
+                  <span className="text-[#ff9d76]">2</span>
+                  <span className="text-white">);</span>
+                  <br />
+                  <br />
+                  <span className="text-white">{'}'}</span>
+                  <br />
+                </code>
+              </pre>
             </div>
 
           </div>
@@ -336,7 +252,7 @@ export default function Hero() {
             viewport={{ once: false, amount: 0.2 }}
             transition={{ delay: 0.4 }}
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#00f5ff]" /> Java Spring
+            <span className="w-1.5 h-1.5 rounded-full bg-[#00f5ff]" /> Java
           </motion.div>
           <motion.div
             className="absolute bottom-20 -right-6 px-3 py-1.5 bg-black/60 backdrop-blur-md border border-[#9400e4]/20 text-[#e3b5ff] font-mono text-[10px] rounded-full font-bold shadow-lg flex items-center gap-1.5 animate-bounce select-none"
@@ -347,7 +263,7 @@ export default function Hero() {
             transition={{ delay: 0.5 }}
             style={{ animationDelay: "1s" }}
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#9400e4]" /> React.js
+            <span className="w-1.5 h-1.5 rounded-full bg-[#9400e4]" /> JavaScript
           </motion.div>
           <motion.div
             className="absolute top-48 -left-8 px-3 py-1.5 bg-black/60 backdrop-blur-md border border-white/10 text-white font-mono text-[10px] rounded-full font-bold shadow-lg flex items-center gap-1.5 animate-bounce select-none"

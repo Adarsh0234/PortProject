@@ -8,6 +8,16 @@ export interface Project {
   codeUrl: string;
 }
 
+export interface Certification {
+  id: string;
+  title: string;
+  issuer: string;
+  startDate: string;
+  endDate: string;
+  imageUrl: string;
+  certificateUrl: string;
+}
+
 export interface SkillCategory {
   id: string;
   name: string;

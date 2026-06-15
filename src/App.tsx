@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Experience from "./components/Experience";
 import Skills from "./components/Skills";
+import Certifications from "./components/Certifications";
 import Projects from "./components/Projects";
 import Education from "./components/Education";
 import Contact from "./components/Contact";
@@ -42,7 +43,7 @@ export default function App() {
     };
 
     const observer = new IntersectionObserver(handleIntersection, observerOptions);
-    const sections = ["home", "about", "experience", "skills", "projects", "education", "contact"];
+    const sections = ["home", "about", "experience", "skills", "certifications", "projects", "education", "contact"];
     sections.forEach((id) => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
@@ -93,6 +94,7 @@ export default function App() {
           <About />
           <Experience />
           <Skills />
+          <Certifications />
           <Projects />
           <Education />
           <Contact />

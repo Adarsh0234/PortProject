@@ -65,7 +65,7 @@ export default function Contact() {
 
   const handleVerifyPasscode = (e: FormEvent) => {
     e.preventDefault();
-    if (passcode === "1234" || passcode.toLowerCase() === "admin") {
+    if (passcode === "6299" || passcode.toLowerCase() === "admin") {
       setIsAdmin(true);
       setShowPasscodePrompt(false);
       setPasscodeError("");
@@ -259,9 +259,9 @@ export default function Contact() {
         )}
 
         <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl text-white font-extrabold mb-8">
-          Ready to Build <br />
+          Happy to Connect <br />
           <ScrollReveal variants={fadeUpVariants}>
-            <span className="text-[#00f5ff] text-glow">The Future?</span>
+            <span className="text-[#00f5ff] text-glow">With You</span>
           </ScrollReveal>
         </h2>
         

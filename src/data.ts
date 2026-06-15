@@ -1,4 +1,4 @@
-import { Project, SkillCategory, EducationItem } from "./types";
+import { Project, Certification, SkillCategory, EducationItem } from "./types";
 
 export const PROJECTS: Project[] = [
   {
@@ -15,8 +15,8 @@ export const PROJECTS: Project[] = [
     title: "Netflix Clone",
     description: "A highly responsive theater grid system showcasing advanced media query layout layouts, custom playback controls, and immersive interactions.",
     tag: "HTML5 / CSS3 / JavaScript",
-    imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuCK9PhbgzB9ADyeHtdCkvqd_c1vl0XFTsQynaOFDY-gScI331SyHpUmRT8wENh3YK1IGcyxJE2dJ608Qzx7xGzbyN5FV6uMZ1TxWTbmBwHEPWnWqGGvQDVF0psN2JZEt3saJ3Mhqe3ODLH8tmmfqlyh1koOOUnYpd6B957Y8BTxuJIXvQ57Qi7xvnS3xtanQ7oXYnxAaaiLPirWNwUOJaMEQrXBcbX0v30yqqlGFmxGuToyXA_sayJBhUM_pNVUoOD4KvzZ1efdrw",
-    liveUrl: "#demo-cinema",
+    imageUrl: "/CLONE.jpg",
+    liveUrl: "https://firstofficialproject.netlify.app",
     codeUrl: "https://github.com/12c02ctsadarshkumar/netflix-clone"
   },
   {
@@ -24,9 +24,39 @@ export const PROJECTS: Project[] = [
     title: "Portfolio Website",
     description: "A customized, lightning-fast digital showroom optimized for full device responsiveness, elegant typography, and intuitive user journeys.",
     tag: "HTML5 / CSS3 / JavaScript",
-    imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuADwHdiIxCEKslliXo39FBKVcTxV3TkQR2kERHiNWJxjB8C4n5g59iCHVatyIIMfQnIY5t3XEkzvzJNHYT28p9RzRSvNm9gZsigiH_0qBEVTPSsqu7GYqObN4gqA2Gxpqr_YJ5_CP2_E0icZ21XZA7XF35jEVAUVsSZAkmCVYEP1WzCuxLK-oAtLTsr6ngt5sXwfldx365VqfRxztZX7a-dYDDEdLlzJ9OuPfsfV84igSqXDJlewtPo2h7iYY-a_VbEVWc4WLN5Rw",
+    imageUrl: "/portfolio.png",
     liveUrl: "#demo-synthetix",
-    codeUrl: "https://github.com/12c02ctsadarshkumar/portfolio-website"
+    codeUrl: "https://github.com/Adarsh0234/PortProject"
+  }
+];
+
+export const CERTIFICATIONS: Certification[] = [
+  {
+    id: "cert1",
+    title: "Java Programming for Beginners",
+    issuer: "Simplilearn",
+    startDate: "1/10/2025",
+    endDate: "22/10/2025",
+    imageUrl: "/Java.jpg",
+    certificateUrl: "https://drive.google.com/file/d/1l4Xe8ACyJRM7MGqwmKuOoOjxebZVyCa9/view?usp=drive_link"
+  },
+  {
+    id: "cert2",
+    title: "Introduction to SQL",
+    issuer: "Simplilearn",
+    startDate: "5/10/2025",
+    endDate: "30/10/2025",
+    imageUrl: "/SQL.jpg",
+    certificateUrl: "https://drive.google.com/file/d/13EUICHgBpS48bVy8WZ8KB_zS8BoSeBgd/view?usp=drive_link"
+  },
+  {
+    id: "cert3",
+    title: "AI Tools and ChatGPT Workshop",
+    issuer: "be10X",
+    startDate: "31/05/2026",
+    endDate: "31/05/2026",
+    imageUrl: "/AI.jpg",
+    certificateUrl: "https://drive.google.com/file/d/1dEn7VZpp711wqjYFspvvVtXoaVwNTSLA/view?usp=drive_link"
   }
 ];
 
