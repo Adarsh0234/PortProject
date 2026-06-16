@@ -110,7 +110,7 @@ export default function Education() {
                         </span>
                         {index === 0 && (
                           <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-[#00dce5]/10 text-[#00f5ff] uppercase tracking-wider animate-pulse">
-                            Active
+                            Completed
                           </span>
                         )}
                       </div>
