@@ -63,7 +63,7 @@ export default function Footer() {
             >
               LINKEDIN
             </a>
-            <a
+            {/* <a
               href="https://twitter.com"
               target="_blank"
               referrerPolicy="no-referrer"
@@ -78,7 +78,7 @@ export default function Footer() {
               className="text-[#b9caca] hover:text-[#00f5ff] transition-colors"
             >
               MEDIUM
-            </a>
+            </a> */}
           </div>
 
         </div>

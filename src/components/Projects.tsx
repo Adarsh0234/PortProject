@@ -11,7 +11,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className="py-28 px-6 relative">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-8xl mx-auto">
         
         {/* Section Title Header */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 mb-20">
@@ -49,7 +49,7 @@ export default function Projects() {
         </div>
 
         {/* 3 Columns Grid of Cards */}
-        <StaggerContainer variants={staggerContainerVariants} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <StaggerContainer variants={staggerContainerVariants} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
           {PROJECTS.map((project) => {
             const isHovered = hoveredPid === project.id;
             return (
@@ -58,7 +58,7 @@ export default function Projects() {
                 variants={staggerItemVariants}
                 onMouseEnter={() => setHoveredPid(project.id)}
                 onMouseLeave={() => setHoveredPid(null)}
-                className="glass-panel group rounded-[2.5rem] overflow-hidden flex flex-col tilt-card relative border border-white/5"
+                className="glass-panel group rounded-[2.5rem] overflow-hidden flex flex-col tilt-card relative border border-white/5 w-full max-w-[30rem] mx-auto"
               >
                 {/* Scaled cover cover wrapper */}
                 <div className="h-64 sm:h-72 overflow-hidden relative">

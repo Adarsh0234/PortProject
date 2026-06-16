@@ -193,7 +193,7 @@ export default function Hero() {
                 <div className="w-2.5 h-2.5 rounded-full bg-green-400" />
               </div>
               <div className="text-[10px] uppercase tracking-widest text-[#b9caca] font-semibold opacity-60 flex items-center gap-1">
-                <Terminal className="w-3 h-3 text-[#00f5ff]" /> architecture_visualizer.py
+                <Terminal className="w-3 h-3 text-[#00f5ff]" /> architecture_visualizer.java
               </div>
             </div>
 

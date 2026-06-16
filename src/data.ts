@@ -6,9 +6,9 @@ export const PROJECTS: Project[] = [
     title: "Blog App",
     description: "A feature-rich personal publishing ecosystem featuring modern Markdown integration, state caching, and responsive presentation interfaces.",
     tag: "HTML5 / CSS3 / JavaScript / Local Storage API",
-    imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuCuQ5CmmgWI1V5kjG7jaT7NmZ1G_wiGdZVSI5lilotCnIc_ywlxBE9exsVHf3yOHhFEvemCxw7RCIfYMKTlvp1kctztpdU-UluSGvmAejcsbyqr2QPXzGo4BAxFiOBq6IogqQpgX66cXY2g6bUB_alddBcBBt7Xpn9IHtA8upeciq7aOsHQaYJIEFk2PO2e0ya_kbt6jQ5h0QozTsz2-qpMX6PF8txYBKitOHlehFRGzPJ8GKSnWA_drzhedx99gdViFjZ0u_U0ug",
-    liveUrl: "#demo-nebula",
-    codeUrl: "https://github.com/12c02ctsadarshkumar/blog-app"
+    imageUrl: "/blog.png",
+    liveUrl: "https://writerverse.netlify.app/",
+    codeUrl: "https://github.com/Adarsh0234/Blog-App"
   },
   {
     id: "cinema",

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Terminal, Code, Mail, Download, Menu, X } from "lucide-react";
+import { Terminal, Code, Mail, Eye, Menu, X } from "lucide-react";
 
 interface HeaderProps {
   activeSection: string;
@@ -36,18 +36,7 @@ export default function Header({ activeSection }: HeaderProps) {
     }
   };
 
-  const downloadMockResume = () => {
-    // Generate a beautiful mock TXT/PDF file programmatically if needed or trigger a mock download success callback
-    const content = `ADARSH_KUMAR_TIWARY RESUME\n\nName: Adarsh Kumar Tiwary\nSpecialty: Full Stack Developer & Java Enthusiast\nLocation: Kolkata, India\nEducation: B.Tech in CS (CGPA 7.25)\nFeatured Work:\n - Nebula Engine (JS Core)\n - Cinema Flux (CSS Layout Engine)\n - Synthetix Portfolio (Vite/React)`;
-    const blob = new Blob([content], { type: "text/plain" });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = "Adarsh_Kumar_Tiwary_CS_Resume.txt";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+  const resumeLink = "https://drive.google.com/file/d/1lzvpE93goPa8vzDLDNqPIVtoXFE5DTyt/view?usp=drive_link";
 
   return (
     <header
@@ -117,13 +106,15 @@ export default function Header({ activeSection }: HeaderProps) {
             </button>
           </div>
 
-          <button
-            onClick={downloadMockResume}
-            className="hidden sm:flex items-center gap-2 px-6 py-2.5 rounded-full bg-white/5 border border-white/10 text-[#dfe2f1] hover:bg-white/10 hover:border-[#00dce5]/50 transition-all font-semibold shadow-lg text-sm cursor-pointer"
+          <a
+            href={resumeLink}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="hidden sm:flex items-center gap-2 px-6 py-2.5 rounded-full bg-white/5 border border-white/10 text-[#dfe2f1] hover:bg-white/10 hover:border-[#00dce5]/50 transition-all font-semibold shadow-lg text-sm"
           >
-            <Download className="w-4 h-4 text-[#00f5ff]" />
+            <Eye className="w-4 h-4 text-[#00f5ff]" />
             Resume
-          </button>
+          </a>
 
           {/* Toggle Mobile Menu */}
           <button
@@ -169,13 +160,15 @@ export default function Header({ activeSection }: HeaderProps) {
                   <Mail className="w-5 h-5" />
                 </button>
               </div>
-              <button
-                onClick={downloadMockResume}
-                className="flex items-center gap-2 px-5 py-2 rounded-full gradient-button text-black font-semibold text-xs cursor-pointer"
+              <a
+                href={resumeLink}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="flex items-center gap-2 px-5 py-2 rounded-full gradient-button text-black font-semibold text-xs"
               >
-                <Download className="w-3.5 h-3.5" />
-                Download Resume
-              </button>
+                <Eye className="w-3.5 h-3.5" />
+                View Resume
+              </a>
             </div>
           </div>
         </div>
