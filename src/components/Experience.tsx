@@ -1,7 +1,9 @@
-import { Briefcase } from "lucide-react";
+import { Briefcase, Eye } from "lucide-react";
 import { motion } from "motion/react";
 import { ScrollReveal, StaggerContainer } from "../animations/ScrollAnimations";
 import { fadeUpVariants, headingVariants, staggerContainerVariants, staggerItemVariants, cardVariants } from "../animations/variants";
+
+const certificateUrl = "https://drive.google.com/file/d/15SQ9Mwdak9OzRszore7-yHzMZkckU8gQ/view?usp=drive_link"; // Replace this with your actual Google Drive certificate link
 
 export default function Experience() {
   return (
@@ -21,6 +23,11 @@ export default function Experience() {
 
           {/* Top-right blur decor circle */}
           <div className="absolute top-0 right-0 w-32 h-32 bg-[#00f5ff]/10 blur-3xl rounded-full -mr-16 -mt-16 pointer-events-none" />
+
+          {/* Internship date badge */}
+          <div className="absolute top-4 right-4 z-10 rounded-full border border-[#00f5ff]/30 bg-[#020617]/95 px-3 py-1 text-[10px] uppercase tracking-[0.22em] text-[#00f5ff] font-semibold shadow-lg shadow-[#00f5ff]/10">
+            17/04/2026 - 17/05/2026
+          </div>
 
           {/* Header section info */}
           <div className="flex items-start gap-4 mb-6">
@@ -70,6 +77,18 @@ export default function Experience() {
               </motion.span>
             ))}
           </StaggerContainer>
+
+          <div className="mt-6 flex justify-start">
+            <a
+              href={certificateUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-[#00f5ff]/30 bg-[#00f5ff]/5 px-4 py-2 text-sm font-semibold text-[#00f5ff] transition hover:border-[#00f5ff]/50 hover:bg-[#00f5ff]/10"
+            >
+              <Eye className="w-4 h-4" />
+              View Certificate
+            </a>
+          </div>
 
         </div>
         </ScrollReveal>

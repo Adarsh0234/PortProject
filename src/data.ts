@@ -4,7 +4,7 @@ export const PROJECTS: Project[] = [
   {
     id: "nebula",
     title: "Blog App",
-    description: "A feature-rich personal publishing ecosystem featuring modern Markdown integration, state caching, and responsive presentation interfaces.",
+    description: "1. Developed a CRUD-based Blog Application using HTML, CSS, and JavaScript, enabling users to create, edit, and manage blog posts. | Implemented Local Storage API to persist user data, allowing seamless access to blog content across sessions. | Designed a responsive and user-friendly interface, ensuring optimal viewing experience on various devices.",
     tag: "HTML5 / CSS3 / JavaScript / Local Storage API",
     imageUrl: "/blog.png",
     liveUrl: "https://writerverse.netlify.app/",
