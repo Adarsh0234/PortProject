@@ -57,6 +57,15 @@ export const CERTIFICATIONS: Certification[] = [
     endDate: "31/05/2026",
     imageUrl: "/AI.jpg",
     certificateUrl: "https://drive.google.com/file/d/1dEn7VZpp711wqjYFspvvVtXoaVwNTSLA/view?usp=drive_link"
+  },
+  {
+    id: "cert4",
+    title: "JavaScript Course",
+    issuer: "SCALER",
+    startDate: "1/07/2026",
+    endDate: "27/07/2026",
+    imageUrl: "/JS_Certificate.png",
+    certificateUrl: "https://drive.google.com/file/d/1IceDEtScd5Gnt18XNJk48xs0R4uJSzY5/view?usp=drive_link"
   }
 ];
 

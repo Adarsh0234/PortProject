@@ -60,7 +60,7 @@ export default function Certifications() {
                   
                   {/* Date pill tag */}
                   <div className="absolute top-5 right-5">
-                    <span className="bg-white/5 backdrop-blur-md text-[#000000] px-3.5 py-1.5 rounded-full text-xs font-bold border border-[#00f5ff]/20">
+                    <span className="bg-white/5 backdrop-blur-md text-[#00A0F0] px-3.5 py-1.5 rounded-full text-xs font-bold border border-[#00f5ff]/20">
                       {cert.startDate} — {cert.endDate}
                     </span>
                   </div>
