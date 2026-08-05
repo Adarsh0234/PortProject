@@ -60,12 +60,12 @@ export const CERTIFICATIONS: Certification[] = [
   },
   {
     id: "cert4",
-    title: "JavaScript Course",
-    issuer: "SCALER",
-    startDate: "1/07/2026",
-    endDate: "27/07/2026",
-    imageUrl: "/JS_Certificate.png",
-    certificateUrl: "https://drive.google.com/file/d/1IceDEtScd5Gnt18XNJk48xs0R4uJSzY5/view?usp=drive_link"
+    title: "JavaScript for Beginners",
+    issuer: "Simplilearn",
+    startDate: "11/07/2026",
+    endDate: "05/08/2026",
+    imageUrl: "/JS.jpg",
+    certificateUrl: "https://drive.google.com/file/d/1_DeDUHphR1-qR2ytCsh-r9HYb-oihPpP/view?usp=drive_link"
   }
 ];
 
