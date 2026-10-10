@@ -11,13 +11,22 @@ export const PROJECTS: Project[] = [
     codeUrl: "https://github.com/Adarsh0234/Blog-App"
   },
   {
-    id: "cinema",
-    title: "Netflix Clone",
-    description: "A highly responsive theater grid system showcasing advanced media query layout layouts, custom playback controls, and immersive interactions.",
-    tag: "HTML5 / CSS3 / JavaScript",
-    imageUrl: "/CLONE.jpg",
-    liveUrl: "https://firstofficialproject.netlify.app",
-    codeUrl: "https://github.com/12c02ctsadarshkumar/netflix-clone"
+    id: "ECommerce",
+    title: "HunarHub-A Local Artisan and Skill Marketplace",
+    description: "HunarHub is a full-stack marketplace connecting local artisans, micro-entrepreneurs, and small businesses with customers.It enables businesses to showcase products, offer services, manage orders, and handle customer requests. Built with React, Node.js, Express.js, and PostgreSQL, it features JWT authentication, email OTP verification, product reviews, and service booking.",
+    tag: "",
+    imageUrl: "/hunarhub.png",
+    liveUrl: "https://hunarhubb.netlify.app/",
+    codeUrl: "https://github.com/Adarsh0234/Hunar-Hub"
+  },
+  {
+    id: "funding",
+    title: "Society Fund Management System",
+    description: "Developed and deployed a full-stack Society Fund Transparency Dashboard to manage residential society finances, including maintenance dues, income, expenses, and fund allocation. Implemented role-based access control for Admin, Treasurer, and Resident users, with interactive dashboards, financial summaries, and charts. Built REST APIs and a relational database for financial record management. **Tech Stack:** React.js, Vite, Node.js, Express.js, PostgreSQL, Git, GitHub, Netlify, and Railway.",
+    tag: "",
+    imageUrl: "/society.png",
+    liveUrl: "https://societyfunds.netlify.app/",
+    codeUrl: "https://github.com/Adarsh0234/Society-Fund"
   },
   {
     id: "synthetix",
@@ -27,6 +36,15 @@ export const PROJECTS: Project[] = [
     imageUrl: "/portfolio.png",
     liveUrl: "#demo-synthetix",
     codeUrl: "https://github.com/Adarsh0234/PortProject"
+  },
+  {
+    id: "cinema",
+    title: "Netflix Clone",
+    description: "A highly responsive theater grid system showcasing advanced media query layout layouts, custom playback controls, and immersive interactions.",
+    tag: "HTML5 / CSS3 / JavaScript",
+    imageUrl: "/CLONE.jpg",
+    liveUrl: "https://firstofficialproject.netlify.app",
+    codeUrl: "https://github.com/12c02ctsadarshkumar/netflix-clone"
   }
 ];
 
