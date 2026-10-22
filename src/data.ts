@@ -149,7 +149,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
 export const EDUCATION: EducationItem[] = [
   {
     id: "btech",
-    degree: "B.Tech in Computer Science",
+    degree: "B.Tech in Electronics and Communication Engineering",
     institution: "Techno Main Salt Lake, Kolkata",
     timeline: "2021 — 2025",
     gradeType: "Current CGPA",

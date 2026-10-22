@@ -36,7 +36,7 @@ export default function Header({ activeSection }: HeaderProps) {
     }
   };
 
-  const resumeLink = "https://drive.google.com/file/d/1lzvpE93goPa8vzDLDNqPIVtoXFE5DTyt/view?usp=drive_link";
+  const resumeLink = "https://drive.google.com/file/d/1mYCpg61C81bVWibjNVmCcy0WtKK8rAwA/view?usp=drive_link";
 
   return (
     <header
