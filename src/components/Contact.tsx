@@ -341,7 +341,7 @@ export default function Contact() {
             </label>
             <input
               type="text"
-              placeholder="Adarsh Kumar Tiwary"
+              placeholder="Your name here..."
               value={name}
               onChange={(e) => setName(e.target.value)}
               className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white text-sm outline-none focus:border-[#00f5ff]/50 focus:bg-black/60 transition-all font-sans"
